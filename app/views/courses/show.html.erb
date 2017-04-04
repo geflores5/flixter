@@ -46,11 +46,14 @@
     </div>
   </div>
 
+  <hr>
+
   <div class="col-12">
     <% @course.sections.rank(:row_order).each do |section| %>
       <br />
       <div class="section">
         <h3>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
           <%= section.title %>
         </h3>
         <div class="row">
@@ -58,11 +61,12 @@
             <div class="col-12 col-sm-6">
               <div class="lesson text-center">
                 <br />
-                <%= link_to lesson_path(lesson) do %>
-                  <b><%= lesson.title %></b>
-                  <br />
-                  <%= lesson.subtitle %>
-                <% end %>
+                  <%= link_to lesson_path(lesson) do %>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    <b><%= lesson.title %></b>
+                    <br />
+                    <%= lesson.subtitle %>
+                  <% end %>
               </div>
             </div>
           <% end %>
